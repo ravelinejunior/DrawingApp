@@ -6,16 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <br.com.drawingapp.view.DrawingView
-        android:id="@+id/drawingView_layout_id"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/background_drawing_view"
+
+    <FrameLayout
+        android:id="@+id/frameLayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@color/white" />
+
+        <br.com.drawingapp.view.DrawingView
+            android:id="@+id/drawingView_layout_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:background="@drawable/background_drawing_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/ll_paint_colors"
@@ -23,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/imageButton_brush"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout_buttons_id"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
@@ -119,17 +138,36 @@
 
     </LinearLayout>
 
-
-    <ImageButton
-        android:id="@+id/imageButton_brush"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="@string/image"
-        android:src="@drawable/ic_brush"
-        app:layout_constraintBottom_toBottomOf="@+id/drawingView_layout_id"
+    <LinearLayout
+        android:id="@+id/linearLayout_buttons_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton_brush"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_brush" />
+
+        <ImageButton
+            android:id="@+id/imageButton_openFromGallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_baseline_videogame_asset_24" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
