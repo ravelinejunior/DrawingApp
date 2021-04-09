@@ -20,7 +20,8 @@
             android:id="@+id/imageView_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
+            android:layout_margin="4dp"
+            android:scaleType="centerCrop"
             android:src="@color/white" />
 
         <br.com.drawingapp.view.DrawingView
@@ -34,6 +35,32 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <LinearLayout
+            android:id="@+id/progress_linearLayout_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/textView_progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Please wait ..."
+                android:textSize="24sp" />
+
+        </LinearLayout>
     </FrameLayout>
 
     <LinearLayout
@@ -150,12 +177,22 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
+            android:id="@+id/imageButton_undoAction_id"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="#6A3C0303"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_undo_action" />
+
+        <ImageButton
             android:id="@+id/imageButton_brush"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:layout_marginHorizontal="20dp"
-            android:background="@android:color/transparent"
+            android:background="#6A3C0303"
             android:contentDescription="@string/image"
             android:src="@drawable/ic_brush" />
 
@@ -164,9 +201,18 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="@android:color/transparent"
+            android:background="#6A3C0303"
             android:contentDescription="@string/image"
             android:src="@drawable/ic_baseline_videogame_asset_24" />
+
+        <ImageButton
+            android:id="@+id/imageButton_saveImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="#6A3C0303"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_baseline_save_24" />
     </LinearLayout>
 
 
